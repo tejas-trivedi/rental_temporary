@@ -1,0 +1,25 @@
+General instruction
+1. Clone the backend dir project
+2. install the requirements using 
+pip install -r requirements.txt
+4. python manage.py createsuperuser and login to admin panel.
+3. Apply migrations 
+4. python manage.py runserver
+
+
+
+Available endpoints
+Base Url:http://127.0.0.1:8000/
+admin/-for admin panel
+
+
+NGO/-for list of all NGOs with details and to add the details of new NGOs
+NGO/Names/- list of NGOs by their Names
+NGO/id/- to get the detail of specific NGO or to delete that NGO or to edit the details
+
+
+Register/- User registration with Username(unique), Email, Password
+Register/Edit/username/- to get the detail of specific user or to edit details.
+
+
+Login/- Provide the username and password to generate a token.
