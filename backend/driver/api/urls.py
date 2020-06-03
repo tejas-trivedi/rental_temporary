@@ -1,4 +1,13 @@
 from django.urls import path, include
+from django.conf.urls import url
+from driver.api.views import QRDetail
+
+urlpatterns = [
+    url(r'^(?P<qr_string>.+)/$', QRDetail.as_view()),
+]
+
+"""
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework import routers
 
@@ -13,3 +22,4 @@ router.register(r'', views.DriverViewSet, basename='driver')
 urlpatterns = [
     path('', include(router.urls)),
 ]
+"""

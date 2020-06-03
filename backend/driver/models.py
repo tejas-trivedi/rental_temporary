@@ -9,7 +9,7 @@ class Driver(models.Model):
     driverName = models.CharField(max_length=50, blank=True)
     car_number = models.CharField(max_length=13)
     contact_number = models.CharField(max_length=10, validators=[RegexValidator(regex='^.{10}$', message='Enter a 10 digit mobile number', code='nomatch')], null=True)
-    NGO_id = models.ForeignKey(NGO, default=1, on_delete=models.CASCADE)
+    #NGO_id = models.ForeignKey(NGO, default=1, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.driverName  
