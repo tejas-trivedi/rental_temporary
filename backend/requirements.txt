@@ -10,3 +10,5 @@ wrapt==1.11.2
 djoser
 drfaddons>=0.1.0
 requests>=2.21.0
+pycryptodome
+django-rest-email-auth
