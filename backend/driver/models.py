@@ -5,7 +5,7 @@ from status.models import NGO
 
 class Driver(models.Model):
     
-    qr_string = models.CharField(max_length=120, default='0010')
+    qr_string = models.CharField(primary_key=True,max_length=120, default='0010')
     driverName = models.CharField(max_length=50, blank=True)
     car_number = models.CharField(max_length=13)
     contact_number = models.CharField(max_length=10, validators=[RegexValidator(regex='^.{10}$', message='Enter a 10 digit mobile number', code='nomatch')], null=True)

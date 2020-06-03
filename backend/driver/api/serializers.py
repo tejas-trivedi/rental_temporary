@@ -4,6 +4,6 @@ from driver.models import Driver
 class DriverSerializer(serializers.ModelSerializer):
     class Meta:
         model = Driver
-        fields = ('id', 'qr_string', 'driverName', 
+        fields = ( 'qr_string', 'driverName', 
                   'NGO_id',
                    'contact_number', 'car_number')

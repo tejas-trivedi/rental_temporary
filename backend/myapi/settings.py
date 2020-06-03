@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'driver',
     'amount',
     'payments',
+    'rest_email_auth',
+
     #'drf_paytm',
     #'drfaddons',
 
@@ -153,8 +155,20 @@ PAYTM_CHANNEL_ID = 'WEB'
 PAYTM_INDUSTRY_TYPE_ID = 'Retail'
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST_PASSWORD = 'yourpassword'
 EMAIL_PORT = 587
+
+
+AUTHENTICATION_BACKENDS = [
+'rest_email_auth.authentication.VerifiedEmailBackend',
+'django.contrib.auth.backends.ModelBackend',
+]
+# The minimal settings dict required for the app
+REST_EMAIL_AUTH = {
+'EMAIL_VERIFICATION_URL': 'https://example.com/verify/{key}',
+'PASSWORD_RESET_URL': 'https://example.com/reset/{key}',
+}
